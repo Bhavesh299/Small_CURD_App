@@ -77,4 +77,24 @@ Router.post("/edit/:id", (req,res)=>{
 
 });
 
+// Delete Data
+
+Router.get("/delete/:id", (req, res)=>{
+
+    Crud.findByIdAndDelete({_id:req.params.id},req.body,(err,doc)=>{
+
+        if(err){
+            console.log("Not Deleted") ;
+        }
+        else{
+            console.log("Deleted") ;
+            res.redirect("/show") ;
+
+        }
+
+    })
+
+});
+
+
 module.exports = Router ;
