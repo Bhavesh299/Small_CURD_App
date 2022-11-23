@@ -4,16 +4,38 @@
     padding: 0;
     text-decoration: none;
 }
+body{
+    display: grid ;
+    place-items: center ;
+    margin: 0;
+    padding: 0 24px;
+    background-image: url("bg.svg");
+    background-repeat: repeat ;
+    background-size: cover;
+    animation: pan 14s infinite alternate linear;
+}
+@media (width >= 500px){
+    body{
+        padding: 0;
+    }
+
+}
+@keyframes pan {
+    100% { background-position: 15% 50%; }
+}
 .navbar{
     position: absolute;
     top: 0;
+    width: 100%;
+    
 }
 ul{
     list-style-type: none;
-    margin: 0;
-    padding: 0;
+    margin: 0; 
+    height: auto;
     overflow: hidden;
     background-color: #333;
+    background: linear-gradient(38deg, rgba(51, 5, 20, 0.9864));
 }
 li{
     float: left;

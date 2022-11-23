@@ -26,8 +26,9 @@ body{
 }
 ul{
     list-style-type: none;
-    margin: 0; 
-    height: auto;
+    margin: 0;
+    padding: 0;
+    /* height: auto; */
     overflow: hidden;
     background-color: #333;
     background: linear-gradient(38deg, rgba(51, 5, 20, 0.9864));
