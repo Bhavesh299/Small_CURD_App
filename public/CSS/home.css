@@ -1,20 +1,33 @@
 body{
-    align-items: center;
-    background-color: #fff;
-    display: flex;
-    justify-content: center;
-    height: 100vh;
-    background: linear-gradient(38deg, rgb(167, 44, 82,0.9864));
+    display: grid;
+    place-items: center;
+    margin: 0;
+    padding: 0 24px;
+    background-image: url("bg.svg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    animation: pan 6s infinite alternate linear;
+}
+@media (width >= 500px){
+    body{
+        padding: 0;
+    }
+
+}
+@keyframes pan {
+    100% { background-position: 15% 50%; }
 }
 .navbar{
     position:absolute;
     top: 0;
-    width: 100%; 
+    width: 100%;
+    
+
 }
 ul{
     list-style-type: none;
     margin: 0; 
-    padding: 0;
+    height: auto;
     overflow: hidden;
     background-color: #333;
     background: linear-gradient(38deg, rgba(51, 5, 20, 0.9864));
@@ -39,6 +52,8 @@ li a:hover{
     height: 500px;
     padding: 20px;
     width: 320px;
+    margin-top: 120px;
+    box-shadow: rgba(255, 253, 253, 0.25) 0px 54px 55px, rgba(255, 255, 255, 0.12) 0px -12px 30px, rgba(255, 255, 255, 0.12) 0px 4px 6px, rgba(255, 255, 255, 0.17) 0px 12px 13px, rgba(244, 241, 241, 0.09) 0px -3px 5px;
 
 }
 .title{
@@ -89,6 +104,7 @@ li a:hover{
     left: 20px;
     position: absolute;
     top: -20px;
+    transform:  translateY(0);
     transition: transform 200ms;
     width: 76px;
 
@@ -118,9 +134,9 @@ li a:hover{
 }
 .input:not(:placeholder-shown) ~ .placeholder{
     color: #151516;
-    margin-top: -10px;
+    /* margin-top: -10px; */
 }
-.input:focus ~ .placeholder{
+.input:focus ~ .placeholder {
     color: #dc2f55;
 }
 .submit{
