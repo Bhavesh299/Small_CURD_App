@@ -1,0 +1,28 @@
+{
+  "name": "crud",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "nodemon app.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Bhavesh299/Small_CURD_App.git"
+  },
+  "author": "Bhavesh Chavhan",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Bhavesh299/Small_CURD_App/issues"
+  },
+  "homepage": "https://github.com/Bhavesh299/Small_CURD_App#readme",
+  "dependencies": {
+    "body-parser": "^1.20.1",
+    "ejs": "^3.1.8",
+    "express": "^4.18.2",
+    "mongodb": "^4.12.0",
+    "mongoose": "^6.7.3",
+    "nodemon": "^2.0.20"
+  }
+}
