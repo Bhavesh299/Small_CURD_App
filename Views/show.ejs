@@ -26,15 +26,24 @@
 
             </thead>
             <tbody>
-                <tr>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td>
-                        a
-                    </td>
 
+               <%  Student.forEach((e) =>{%>
+                <tr>
+                    <td><%- e._id %></td>
+                    <td><%- e.name %></td>
+                    <td><%- e.email %></td>
+                    <td>
+                        <a href="/edit/<%= e._id %>">
+                            <span class="blue">View</span>
+
+                        </a>
+                        <a href="#">
+                            <span class="pink">Delete</span>
+                        </a>
+                    </td>
                 </tr>
+           <%  }) %>
+           
             </tbody>
         </table>
     </div>

@@ -7,7 +7,8 @@ Router.get("/",(req , res ) =>{
     res.render("index")
 })
 
-//  Create or insert a data
+//  Create or insert a Data
+
 Router.post("/add",(req , res ) =>{
 
     const name = req.body.name ;
@@ -28,7 +29,7 @@ Router.post("/add",(req , res ) =>{
     })
 });
 
-// Find data
+// Find Data
 
 Router.get("/show",(req , res ) =>{
 
@@ -44,5 +45,36 @@ Router.get("/show",(req , res ) =>{
     });
 });
 
+// Update Data
+
+Router.get("/edit/:id",(req , res)=>{
+
+    // console.log(req.params.id) ;
+
+    Crud.findOneAndUpdate({_id: req.params.id},req.body,{new:true},(err,doc) =>{
+
+        if(err){
+            console.log( "Can't Updated") ;
+        }
+        else{
+            res.render("edit",{Data:doc}) ;
+        }
+    })
+
+}) ;
+
+Router.post("/edit/:id", (req,res)=>{
+
+    Crud.findByIdAndUpdate({_id:req.params.id},req.body,{new:true},(err,doc) =>{
+
+        if(err){
+            console.log( "Can't Update") ;
+        }
+        else{
+            res.redirect("/show")
+        }
+    })
+
+});
 
 module.exports = Router ;
