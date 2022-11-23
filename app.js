@@ -1,7 +1,7 @@
 const express = require('express') ;
 const mongoose = require('mongoose') ;
 const bodyParser = require('body-parser');
-
+const HomeRouter = require("./Routers/Home") ;
 
 const app = express() ; 
 const port = process.env.port || 8080 ;
@@ -19,10 +19,9 @@ db.once("open", () =>{
 
     console.log("Connection Sucessfully Done");
 })
-
-app.get('/', (req , res) =>{
-
-    res.send("Bhavesh_chavhan") ;
-
-}) ;
+app.set("view engine","ejs") ;
+app.use(express.static("public"))
+app.use(bodyParser.urlencoded({ extended : false})) ;
+app.use(bodyParser.json());
+app.use("/", HomeRouter) ;
 app.listen(port) ;
